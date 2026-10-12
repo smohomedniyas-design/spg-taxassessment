@@ -467,10 +467,6 @@
             <div class="option-indicator"></div>
             <div class="option-label">W-2 Salaried Employee Only (No business entities)</div>
           </div>
-          <div class="option-item" onclick="selectOption('q1', 're_investor', this)">
-            <div class="option-indicator"></div>
-            <div class="option-label">Active Real Estate Investor / Multiple Holdings</div>
-          </div>
         </div>
 
         <div class="btn-row">
@@ -511,7 +507,7 @@
           </div>
           <div class="option-item" onclick="selectOption('q2', 'over1m', this)">
             <div class="option-indicator"></div>
-            <div class="option-label">$1,000,000+ (High Net Worth / Enterprise)</div>
+            <div class="option-label">$1,000,000+</div>
             <span class="option-badge">VIP Scope</span>
           </div>
         </div>
@@ -544,10 +540,6 @@
             <div class="option-indicator"></div>
             <div class="option-label">Bought, sold, or managing commercial / residential real estate</div>
           </div>
-          <div class="option-item" onclick="toggleCheckbox(this, 'retirement')">
-            <div class="option-indicator"></div>
-            <div class="option-label">Want to establish a Defined Benefit / Solo 401(k) / Cash Balance Plan</div>
-          </div>
           <div class="option-item" onclick="toggleCheckbox(this, 'steady')">
             <div class="option-indicator"></div>
             <div class="option-label">No major changes — just want to eliminate tax overpayment & get a projection</div>
@@ -568,11 +560,11 @@
         <div class="options-grid">
           <div class="option-item" onclick="selectOption('q4', 'reactive', this)">
             <div class="option-indicator"></div>
-            <div class="option-label">"My CPA files returns in April, but we never strategize before year-end."</div>
+            <div class="option-label">"My tax preparer files returns in April, but we never strategize before year-end."</div>
           </div>
           <div class="option-item" onclick="selectOption('q4', 'diy', this)">
             <div class="option-indicator"></div>
-            <div class="option-label">"I've been self-filing, but my revenue is now too complex for software."</div>
+            <div class="option-label">"I've been self-filing, but my revenue is now too complex."</div>
           </div>
           <div class="option-item" onclick="selectOption('q4', 'transition', this)">
             <div class="option-indicator"></div>
@@ -580,7 +572,7 @@
           </div>
           <div class="option-item" onclick="selectOption('q4', 'satisfied', this)">
             <div class="option-indicator"></div>
-            <div class="option-label">"I have a proactive CPA, but want a second-opinion review of past 3 years."</div>
+            <div class="option-label">"I have a proactive tax preparer, but want a second-opinion review of past 3 years."</div>
           </div>
         </div>
 
@@ -608,8 +600,8 @@
           <input type="tel" id="leadPhone" class="text-input" placeholder="(555) 234-5678" required />
         </div>
         <div class="input-group">
-          <label class="input-label">Referral Code or Partner Source (Optional)</label>
-          <input type="text" id="leadRef" class="text-input" placeholder="e.g. MATTREFERRAL" />
+          <label class="input-label">Who referred you or how did you hear about us? (Optional)</label>
+          <input type="text" id="leadRef" class="text-input" placeholder="e.g. Friend / Colleague / LinkedIn / Referral source" />
         </div>
 
         <div class="btn-row">
@@ -647,8 +639,7 @@
 
         <div class="deposit-callout" id="depositExplanation">
           <strong>Session Booking Deposit: $100</strong><br>
-          To maintain high-touch focus, Matt Sandstrom charges a $100 reservation deposit for online bookings. 
-          <em>This $100 is credited 100% toward your planning engagement if you choose to move forward.</em>
+          Online strategy sessions require a $100 reservation deposit, credited 100% toward your planning engagement if you choose to move forward.
         </div>
 
         <div class="btn-row" style="flex-direction: column; align-items: stretch; gap: 12px;">
@@ -790,7 +781,7 @@
           depositExplanation.innerHTML = '<strong>Referral Code Verified:</strong> Your $100 session deposit has been waived by Sands Planning Group courtesy of your referral partner.';
           calendlyBtn.innerText = 'Book Your Strategy Session (Deposit Waived) →';
         } else {
-          depositExplanation.innerHTML = '<strong>Session Booking Deposit: $100</strong><br>To protect Matt\'s calendar from unqualified inquiries, online sessions require a $100 deposit, credited 100% toward your planning engagement.';
+          depositExplanation.innerHTML = '<strong>Session Booking Deposit: $100</strong><br>Online strategy sessions require a $100 reservation deposit, credited 100% toward your planning engagement if you choose to move forward.';
           calendlyBtn.innerText = 'Reserve Session with Matt ($100 Deposit) →';
         }
         calendlyBtn.href = `https://calendly.com/sandsplanning/tax-strategy-session?name=${encodeURIComponent(state.name)}&email=${encodeURIComponent(state.email)}&a1=${encodeURIComponent(tierName.innerText)}`;
